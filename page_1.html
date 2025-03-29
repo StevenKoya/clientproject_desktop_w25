@@ -4,34 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Pantry Resources</title>
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
     <header>
-        <a href="#main-content" class="skip-link">Skip to Main Content</a>
+        <img src="images/UMSI_signature_v.jpg" alt="UMSI Logo">
+        
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="page_1.html">Food Pantry</a></li>
+                <li><a href="page_1.html" class="active">Food Pantry</a></li>
                 <li><a href="page_2.html">First Gen</a></li>
                 <li><a href="page_3.html">CAPS</a></li>
             </ul>
         </nav>
-        <h1>Food Pantry Resources</h1>
 
+        <h1>Food Pantry Resources</h1>
     </header>
+
     <main id="main-content">
-        <section>
-            <h2>Maize and Blue Cupboard</h2>
-            <p>The Maize and Blue Cupboard provides free food, personal care items, and other resources for University of Michigan students facing food insecurity.</p>
-            <p>Visit their official website for more information:</p>
-            <a href="https://mbc.studentlife.umich.edu/" target="_blank">Maize and Blue Cupboard</a>
+        <section class="grid-container">
+            <article class="resource-card">
+                <h2>Maize and Blue Cupboard</h2>
+                <p>The Maize and Blue Cupboard provides free food, personal care items, and other resources for University of Michigan students facing food insecurity.</p>
+                <p>Visit their official website for more information:</p>
+                <a href="https://mbc.studentlife.umich.edu/" target="_blank">Maize and Blue Cupboard</a>
+            </article>
+
+            <article class="resource-card">
+                <h2>Additional Resources</h2>
+                <p>Other food assistance programs available for students:</p>
+                <ul>
+                    <li><a href="https://www.foodgatherers.org/" target="_blank">Food Gatherers</a> - Local food bank providing community support.</li>
+                    <li><a href="https://www.washtenaw.org/1805/Food-Assistance" target="_blank">Washtenaw County Food Assistance</a> - Government aid programs for food security.</li>
+                </ul>
+            </article>
         </section>
     </main>
 
     <footer>
         <p>MSI Academic Advising | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">UMSI Academic Advising</a></p>
-        <p>&copy; 2025 University of Michigan</p>
+        <p>© 2025 University of Michigan</p>
     </footer>
+
 </body>
 </html>
