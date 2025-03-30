@@ -41,6 +41,7 @@ nav ul li a {
     transition: background 0.3s ease;
 }
 nav ul li a.active {
+    color: #FFCB05; /* Maize for active link for better contrast */
     font-weight: bold;
     border-bottom: 2px solid #FFCB05;
 }
