@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: 100px auto;
+        }
+        .error-container h1 {
+            font-size: 3rem;
+            color: #00274C;
+        }
+        .error-container p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .error-container a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #FFCB05;
+            color: #00274C;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+        }
+        .error-container a:hover {
+            background-color: #00274C;
+            color: #FFCB05;
+        }
+        .error-container img {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <img src="images/UMSI_signature_v.jpg" alt="UMSI Logo" onerror="this.onerror=null;this.src='images/UMSI_signature_v.png';">
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page_1.html">Food Pantry</a></li>
+                <li><a href="page_2.html">First Gen</a></li>
+                <li><a href="page_3.html">CAPS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="error-container">
+            <h1>404 - Page Not Found 😢</h1>
+            <p>Oops! The page you're looking for does not exist or has been moved.</p>
+            <a href="index.html" aria-label="Return to the homepage">Return to Home</a>
+
+            <img src="images/404_graphic.png" alt="404 Error Illustration">
+        </div>
+    </main>
+
+    <footer>
+        <p>MSI Academic Advising | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources" target="_blank" rel="noopener noreferrer" aria-label="Visit UMSI Academic Advising Resources">UMSI Academic Advising</a></p>
+        <p>© <span id="year"></span> University of Michigan</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

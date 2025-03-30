@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counseling and Psychological Services (CAPS)</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
     <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
     <header>
-        <img src="images/UMSI_signature_v.jpg" alt="UMSI Logo">
 
-        <nav>
+        <img src="images/UMSI_signature_v.jpg" alt="UMSI Logo" onerror="this.onerror=null;this.src='images/UMSI_signature_v.png';">
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="page_1.html">Food Pantry</a></li>
@@ -31,24 +33,87 @@
                 <h2>About CAPS</h2>
                 <p>CAPS provides mental health support for University of Michigan students, offering services such as counseling, therapy groups, workshops, and crisis intervention.</p>
                 <p>Visit the CAPS website for more information:</p>
-                <a href="https://caps.umich.edu/" target="_blank">CAPS Official Website</a>
+                <a href="https://caps.umich.edu/" target="_blank" rel="noopener noreferrer" aria-label="Visit the CAPS Official Website">CAPS Official Website</a>
             </article>
 
             <article class="resource-card">
                 <h2>Additional Mental Health Resources</h2>
                 <p>Explore other mental health support options:</p>
                 <ul>
-                    <li><a href="https://uhs.umich.edu/mentalhealth" target="_blank">UHS Mental Health Services</a></li>
-                    <li><a href="https://www.nami.org/Home" target="_blank">National Alliance on Mental Illness (NAMI)</a></li>
+                    <li><a href="https://uhs.umich.edu/mentalhealth" target="_blank" rel="noopener noreferrer" aria-label="Visit UHS Mental Health Services">UHS Mental Health Services</a></li>
+                    <li><a href="https://www.nami.org/Home" target="_blank" rel="noopener noreferrer" aria-label="Explore the National Alliance on Mental Illness (NAMI)">National Alliance on Mental Illness (NAMI)</a></li>
                 </ul>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>MSI Academic Advising | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources">UMSI Academic Advising</a></p>
-        <p>© 2025 University of Michigan</p>
+        <p>MSI Academic Advising | <a href="https://sites.google.com/umich.edu/msiacademicadvising/student-support-resources" target="_blank" rel="noopener noreferrer" aria-label="Visit UMSI Academic Advising Resources">UMSI Academic Advising</a></p>
+        <p>© <span id="year"></span> University of Michigan</p>
     </footer>
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        const currentLocation = window.location.pathname.split("/").pop();
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('href') === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <style>
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #ffcc00;
+            color: #000;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        /* Tablet View */
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Desktop View */
+        @media (min-width: 1024px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        .resource-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        nav a.active {
+            font-weight: bold;
+            color: #007bc1;
+        }
+    </style>
 </body>
 </html>

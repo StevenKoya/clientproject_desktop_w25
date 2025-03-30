@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-/* Skip to Main Content */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -17,10 +16,12 @@ body {
     padding: 10px;
     text-decoration: none;
     z-index: 100;
+    border-radius: 4px;
 }
 .skip-link:focus {
     top: 10px;
 }
+
 
 nav ul {
     list-style: none;
@@ -37,12 +38,22 @@ nav ul li a {
     padding: 15px;
     display: inline-block;
     text-decoration: none;
+    transition: background 0.3s ease;
 }
 nav ul li a.active {
     font-weight: bold;
     border-bottom: 2px solid #FFCB05;
 }
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #004D99;
+    border-bottom: 2px solid #FFCB05;
+}
 
+/* Main Content & Grid Styles */
+
+main {
+    padding: 20px;
+}
 
 .grid-container {
     display: grid;
@@ -50,32 +61,96 @@ nav ul li a.active {
     gap: 20px;
     padding: 20px;
 }
+
+/* Resource Card Styling */
 .resource-card {
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.resource-card:hover {
+    transform: translateY(-5px);
 }
 .resource-card a {
     display: block;
     color: #0077b6;
     font-weight: bold;
     text-decoration: none;
+    margin-top: 10px;
 }
+.resource-card a:hover, .resource-card a:focus {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
 
 footer {
     text-align: center;
     padding: 20px;
     background: #00274C;
     color: white;
+    font-size: 14px;
 }
-
 footer a {
-    color: #FFCB05; 
+    color: #FFCB05;
     font-weight: bold;
     text-decoration: underline;
 }
-
 footer a:hover, footer a:focus {
-    color: #FFFFFF; 
+    color: #FFFFFF;
+}
+
+/* Responsive Design - Tablet View */
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Header for Tablet */
+    header {
+        padding: 20px 40px;
+    }
+}
+
+/* Responsive Design - Desktop View */
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Header for Desktop */
+    header {
+        padding: 30px 50px;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .resource-card {
+        padding: 25px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add Hover Effects for Footer Links */
+footer a:hover {
+    text-decoration: none;
+    color: #FFCB05;
 }
